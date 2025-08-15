@@ -1,0 +1,44 @@
+# Nextflow
+.nextflow/
+work/
+results/
+*.log
+
+# Docker
+.dockerignore
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Data files (large files that shouldn't be in git)
+*.fastq.gz
+*.bam
+*.bai
+*.vcf.gz
+*.vcf.gz.tbi
+*.fa
+*.fa.fai
+*.bed
+
+# Test data results
+test_data/results/
+test_data/.nextflow/
+test_data/work/
+
+# Environment
+.env
+.venv/
+venv/
+env/
