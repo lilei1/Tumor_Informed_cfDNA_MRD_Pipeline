@@ -1,20 +1,18 @@
 #!/usr/bin/env nextflow
 
-/*
- * Tumor-Informed cfDNA MRD Pipeline
- * Main workflow for detecting Minimal Residual Disease in CRC patients
- */
+// Tumor-Informed cfDNA MRD Pipeline
+// Main workflow orchestrator
 
-// Import modules
-include { WES_PREPROCESSING } from './modules/preprocessing'
-include { SOMATIC_VARIANT_CALLING } from './modules/preprocessing'
+// Include modules
+include { WES_PREPROCESSING; SOMATIC_VARIANT_CALLING } from './modules/preprocessing'
+include { UMI_EXTRACTION; PLASMA_ALIGNMENT; UMI_CONSENSUS; PLASMA_QC; TRUTHSET_VARIANT_CALLING; FRAGMENTOMICS_FEATURES; METHYLATION_FEATURES; CNV_ANALYSIS } from './modules/plasma_processing'
 include { FEATURE_EXTRACTION } from './modules/feature_extraction'
 include { MRD_CLASSIFICATION } from './modules/mrd_classification'
 include { VALIDATION } from './modules/validation'
 include { REPORTING } from './modules/reporting'
 
-// Input channels for WES samples
-Channel
+// Input channels
+tumor_ch = Channel
     .fromPath(params.tumorDir + "/*_R{1,2}.fastq.gz")
     .map { file -> 
         def sample = file.name.replaceAll(/.*?(\w+)_T0_R[12]\.fastq\.gz/, '$1')
@@ -26,9 +24,8 @@ Channel
         def r2 = files.find { it.name.contains('_R2.fastq.gz') }
         [sample, r1, r2]
     }
-    .set { tumor_ch }
 
-Channel
+normal_ch = Channel
     .fromPath(params.normalDir + "/*_R{1,2}.fastq.gz")
     .map { file -> 
         def sample = file.name.replaceAll(/.*?(\w+)_T0_R[12]\.fastq\.gz/, '$1')
@@ -40,29 +37,24 @@ Channel
         def r2 = files.find { it.name.contains('_R2.fastq.gz') }
         [sample, r1, r2]
     }
-    .set { normal_ch }
 
-// Input channels for plasma samples (for later steps)
-Channel
-    .fromPath(params.plasmaDir + "/*_T*_R{1,2}.fastq.gz")
+// Plasma samples (patients) - multiple timepoints
+plasma_patients_ch = Channel
+    .fromPath(params.plasmaDir + "/*_T{0,1,2,3,4}_R{1,2}.fastq.gz")
     .map { file -> 
-        def sample = file.name.replaceAll(/.*?(\w+)_T(\d+)_R[12]\.fastq\.gz/, '$1\t$2')
-        def parts = sample.split('\t')
-        [parts[0], parts[1].toInteger(), file]
+        def sample = file.name.replaceAll(/.*?(\w+)_T(\d+)_R[12]\.fastq\.gz/, '$1')
+        def timepoint = file.name.replaceAll(/.*?(\w+)_T(\d+)_R[12]\.fastq\.gz/, 'T$2')
+        [sample, timepoint, file]
     }
     .groupTuple()
-    .map { sample, timepoints, files -> 
-        def timepointFiles = [:]
-        timepoints.eachWithIndex { tp, i ->
-            def r1 = files.find { it.name.contains("_T${tp}_R1.fastq.gz") }
-            def r2 = files.find { it.name.contains("_T${tp}_R2.fastq.gz") }
-            timepointFiles[tp] = [r1, r2]
-        }
-        [sample, timepointFiles]
+    .map { sample, timepoint, files -> 
+        def r1 = files.find { it.name.contains('_R1.fastq.gz') }
+        def r2 = files.find { it.name.contains('_R2.fastq.gz') }
+        [sample, timepoint, r1, r2]
     }
-    .set { plasma_ch }
 
-Channel
+// Healthy plasma samples
+healthy_plasma_ch = Channel
     .fromPath(params.healthyDir + "/*_R{1,2}.fastq.gz")
     .map { file -> 
         def sample = file.name.replaceAll(/.*?(\w+)_R[12]\.fastq\.gz/, '$1')
@@ -74,7 +66,6 @@ Channel
         def r2 = files.find { it.name.contains('_R2.fastq.gz') }
         [sample, r1, r2]
     }
-    .set { healthy_ch }
 
 // Reference files
 ref_genome = Channel.fromPath(params.genome)
@@ -84,9 +75,11 @@ pon_vcf = Channel.fromPath(params.ponVcf)
 dmr_bed = Channel.fromPath(params.dmrBed)
 tss_bed = Channel.fromPath(params.tssBed)
 
-// Main workflow
+// Additional resources for Step 2
+gc_wig = Channel.fromPath(params.gcWig)
+map_wig = Channel.fromPath(params.mapWig)
+
 workflow {
-    
     // Step 1: WES Preprocessing and Somatic Variant Calling
     // Process tumor samples
     WES_PREPROCESSING(
@@ -112,37 +105,62 @@ workflow {
         pon_vcf
     )
     
-    // Step 2: Feature Extraction (for plasma samples - to be implemented)
-    // FEATURE_EXTRACTION(
-    //     plasma_ch,
-    //     SOMATIC_VARIANT_CALLING.out.truth_set,
-    //     dmr_bed,
-    //     tss_bed,
-    //     ref_genome
-    // )
+    // Step 2: Plasma cfDNA Processing
+    // UMI extraction for plasma samples
+    UMI_EXTRACTION(plasma_patients_ch)
     
-    // Step 3: MRD Classification (to be implemented)
-    // MRD_CLASSIFICATION(
-    //     FEATURE_EXTRACTION.out.features,
-    //     SOMATIC_VARIANT_CALLING.out.truth_set,
-    //     plasma_ch
-    // )
+    // Align UMI-tagged reads
+    PLASMA_ALIGNMENT(
+        UMI_EXTRACTION.out.umi_fastq,
+        ref_genome
+    )
     
-    // Step 4: Validation (to be implemented)
-    // VALIDATION(
-    //     MRD_CLASSIFICATION.out.mrd_scores,
-    //     FEATURE_EXTRACTION.out.features,
-    //     params.outdir
-    // )
+    // Generate UMI consensus
+    UMI_CONSENSUS(PLASMA_ALIGNMENT.out.raw_bam)
     
-    // Step 5: Reporting (to be implemented)
-    // REPORTING(
-    //     SOMATIC_VARIANT_CALLING.out.truth_set,
-    //     FEATURE_EXTRACTION.out.features,
-    //     MRD_CLASSIFICATION.out.mrd_scores,
-    //     VALIDATION.out.validation_metrics,
-    //     params.outdir
-    // )
+    // Quality control for consensus BAMs
+    PLASMA_QC(
+        UMI_CONSENSUS.out.consensus_bam,
+        ref_genome
+    )
+    
+    // Variant calling at truth set loci
+    TRUTHSET_VARIANT_CALLING(
+        UMI_CONSENSUS.out.consensus_bam,
+        ref_genome,
+        SOMATIC_VARIANT_CALLING.out.truth_set_bed,
+        gnomad_vcf,
+        pon_vcf
+    )
+    
+    // Extract fragmentomics features
+    FRAGMENTOMICS_FEATURES(
+        UMI_CONSENSUS.out.consensus_bam,
+        ref_genome,
+        tss_bed
+    )
+    
+    // Optional: Methylation features (if EM-seq data available)
+    // METHYLATION_FEATURES(...)
+    
+    // CNV analysis using ichorCNA
+    CNV_ANALYSIS(
+        PLASMA_QC.out.coverage_wig,
+        gc_wig,
+        map_wig
+    )
+    
+    // Step 3: Feature Extraction (to be implemented)
+    // FEATURE_EXTRACTION(...)
+    
+    // Step 4: MRD Classification (to be implemented)
+    // MRD_CLASSIFICATION(...)
+    
+    // Step 5: Validation (to be implemented)
+    // VALIDATION(...)
+    
+    // Step 6: Reporting (to be implemented)
+    // REPORTING(...)
 }
 
 // Output channels for Step 1
@@ -151,3 +169,13 @@ workflow.out.truth_set_bed = SOMATIC_VARIANT_CALLING.out.truth_set_bed
 workflow.out.filtered_variants = SOMATIC_VARIANT_CALLING.out.filtered_variants
 workflow.out.wes_bams = WES_PREPROCESSING.out.dedup_bam
 workflow.out.wes_metrics = WES_PREPROCESSING.out.hs_metrics
+
+// Output channels for Step 2
+workflow.out.plasma_consensus = UMI_CONSENSUS.out.consensus_bam
+workflow.out.plasma_variants = TRUTHSET_VARIANT_CALLING.out.filtered_variants
+workflow.out.plasma_variant_counts = TRUTHSET_VARIANT_CALLING.out.variant_counts
+workflow.out.plasma_fragmentomics = FRAGMENTOMICS_FEATURES.out.fragmentomics
+workflow.out.plasma_endmotifs = FRAGMENTOMICS_FEATURES.out.endmotifs
+workflow.out.plasma_tss_coverage = FRAGMENTOMICS_FEATURES.out.tss_coverage
+workflow.out.plasma_cnv = CNV_ANALYSIS.out.tumor_fraction
+workflow.out.plasma_qc = PLASMA_QC.out.insert_metrics

@@ -1,0 +1,66 @@
+Aug-15 16:37:38.621 [main] DEBUG nextflow.cli.Launcher - $> nextflow run test_workflow.nf
+Aug-15 16:37:38.654 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 25.04.6
+Aug-15 16:37:38.671 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/Users/lilei/.nextflow/plugins; core-plugins: nf-amazon@2.15.0,nf-azure@1.16.0,nf-cloudcache@0.4.3,nf-codecommit@0.2.3,nf-console@1.2.1,nf-google@1.21.1,nf-k8s@1.0.0,nf-tower@1.11.4,nf-wave@1.12.1
+Aug-15 16:37:38.689 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Aug-15 16:37:38.690 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Aug-15 16:37:38.691 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+Aug-15 16:37:38.696 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Aug-15 16:37:38.707 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /Users/lilei/Downloads/Tumor_Informed_cfDNA_MRD_Pipeline/test_data/nextflow.config
+Aug-15 16:37:38.708 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/lilei/Downloads/Tumor_Informed_cfDNA_MRD_Pipeline/test_data/nextflow.config
+Aug-15 16:37:38.726 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /Users/lilei/.nextflow/secrets/store.json
+Aug-15 16:37:38.728 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@4e38d975] - activable => nextflow.secret.LocalSecretsProvider@4e38d975
+Aug-15 16:37:38.730 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Aug-15 16:37:38.953 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Aug-15 16:37:38.961 [main] DEBUG nextflow.cli.CmdRun - Launching `test_workflow.nf` [gigantic_brattain] DSL2 - revision: e3ab5b3c56
+Aug-15 16:37:38.961 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Aug-15 16:37:38.962 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Aug-15 16:37:38.987 [main] DEBUG nextflow.Session - Session UUID: 9aef2f74-9922-4215-8f02-86050fb7da34
+Aug-15 16:37:38.987 [main] DEBUG nextflow.Session - Run name: gigantic_brattain
+Aug-15 16:37:38.988 [main] DEBUG nextflow.Session - Executor pool size: 16
+Aug-15 16:37:38.992 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Aug-15 16:37:38.994 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=48; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Aug-15 16:37:39.031 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 25.04.6 build 5954
+  Created: 01-07-2025 11:27 UTC (04:27 PDT)
+  System: Mac OS X 15.6
+  Runtime: Groovy 4.0.26 on OpenJDK 64-Bit Server VM 21.0.6+9-b895.97
+  Encoding: UTF-8 (UTF-8)
+  Process: 37942@LiLei-M36.local [127.0.0.1]
+  CPUs: 16 - Mem: 48 GB (564.2 MB) - Swap: 0 (0)
+Aug-15 16:37:39.039 [main] DEBUG nextflow.Session - Work-dir: /Users/lilei/Downloads/Tumor_Informed_cfDNA_MRD_Pipeline/test_data/work [Mac OS X]
+Aug-15 16:37:39.039 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /Users/lilei/Downloads/Tumor_Informed_cfDNA_MRD_Pipeline/test_data/bin
+Aug-15 16:37:39.044 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Aug-15 16:37:39.047 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Aug-15 16:37:39.054 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+Aug-15 16:37:39.064 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Aug-15 16:37:39.069 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 17; maxThreads: 1000
+Aug-15 16:37:39.094 [main] DEBUG nextflow.Session - Session start
+Aug-15 16:37:39.096 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /Users/lilei/Downloads/Tumor_Informed_cfDNA_MRD_Pipeline/test_data/results/trace.txt
+Aug-15 16:37:39.295 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Aug-15 16:37:39.333 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_a5c9bbc1028f2340: /Users/lilei/Downloads/Tumor_Informed_cfDNA_MRD_Pipeline/test_data/test_workflow.nf
+Aug-15 16:37:39.333 [main] DEBUG nextflow.Session - Session aborted -- Cause: Access to 'MOCK_SOMATIC_VARIANT_CALLING.out' is undefined since the process 'MOCK_SOMATIC_VARIANT_CALLING' has not been invoked before accessing the output attribute
+Aug-15 16:37:39.340 [main] DEBUG nextflow.Session - The following nodes are still active:
+  [operator] map
+  [operator] groupTuple
+  [operator] map
+  [operator] map
+  [operator] groupTuple
+  [operator] map
+
+Aug-15 16:37:39.342 [main] ERROR nextflow.cli.Launcher - Access to 'MOCK_SOMATIC_VARIANT_CALLING.out' is undefined since the process 'MOCK_SOMATIC_VARIANT_CALLING' has not been invoked before accessing the output attribute
+nextflow.exception.ScriptRuntimeException: Access to 'MOCK_SOMATIC_VARIANT_CALLING.out' is undefined since the process 'MOCK_SOMATIC_VARIANT_CALLING' has not been invoked before accessing the output attribute
+	at nextflow.script.ProcessDef.getOut(ProcessDef.groovy:153)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at Script_a5c9bbc1028f2340.runScript(Script_a5c9bbc1028f2340:135)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.script.BaseScript.run0(BaseScript.groovy:159)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:193)
+	at nextflow.script.parser.v1.ScriptLoaderV1.runScript(ScriptLoaderV1.groovy:246)
+	at nextflow.script.parser.v1.ScriptLoaderV1.runScript(ScriptLoaderV1.groovy)
+	at nextflow.script.ScriptRunner.run(ScriptRunner.groovy:246)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:139)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:379)
+	at nextflow.cli.Launcher.run(Launcher.groovy:513)
+	at nextflow.cli.Launcher.main(Launcher.groovy:673)

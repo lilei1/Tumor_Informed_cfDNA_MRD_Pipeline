@@ -1,10 +1,11 @@
+# Use Ubuntu 20.04 as base image
 FROM ubuntu:20.04
 
 # Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
-ENV PYTHONUNBUFFERED=1
+ENV PATH="/usr/local/bin:${PATH}"
 
-# Install system dependencies
+# Update package list and install basic dependencies
 RUN apt-get update && apt-get install -y \
     wget \
     curl \
@@ -17,29 +18,28 @@ RUN apt-get update && apt-get install -y \
     libncursesw5-dev \
     libssl-dev \
     libcurl4-openssl-dev \
+    libxml2-dev \
     libpng-dev \
     libjpeg-dev \
     libfreetype6-dev \
     libtiff5-dev \
-    libopenblas-dev \
-    liblapack-dev \
-    gfortran \
-    pkg-config \
+    libgsl-dev \
+    libgslcblas0 \
+    libhdf5-dev \
+    libboost-all-dev \
     cmake \
+    pkg-config \
     unzip \
-    bzip2 \
-    gzip \
-    tar \
     default-jre \
     default-jdk \
+    r-base \
+    r-base-dev \
+    python3 \
+    python3-pip \
+    python3-dev \
+    python3-setuptools \
+    python3-wheel \
     && rm -rf /var/lib/apt/lists/*
-
-# Install Python 3.8
-RUN apt-get update && apt-get install -y python3.8 python3.8-dev python3-pip
-
-# Set Python 3.8 as default
-RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
-RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1
 
 # Install Python packages (only scientific packages)
 RUN pip3 install --no-cache-dir \
@@ -120,11 +120,57 @@ RUN cd /tmp && \
     ./configure && make && make install && \
     cd / && rm -rf /tmp/bcftools-1.16.1*
 
+# Install FGBio (for UMI consensus)
+RUN cd /tmp && \
+    wget https://github.com/fulcrumgenomics/fgbio/releases/download/2.0.2/fgbio-2.0.2.jar && \
+    mv fgbio-2.0.2.jar /usr/local/bin/fgbio.jar && \
+    echo '#!/bin/bash\njava -jar /usr/local/bin/fgbio.jar "$@"' > /usr/local/bin/fgbio && \
+    chmod +x /usr/local/bin/fgbio && \
+    cd / && rm -rf /tmp/*
+
+# Install Mosdepth (for coverage analysis)
+RUN cd /tmp && \
+    wget https://github.com/brentp/mosdepth/releases/download/v0.3.3/mosdepth && \
+    chmod +x mosdepth && \
+    mv mosdepth /usr/local/bin/ && \
+    cd / && rm -rf /tmp/*
+
+# Install Bismark (for methylation analysis)
+RUN cd /tmp && \
+    wget https://github.com/FelixKrueger/Bismark/archive/0.24.1.tar.gz && \
+    tar -xzf 0.24.1.tar.gz && \
+    cd Bismark-0.24.1 && \
+    cp bismark* /usr/local/bin/ && \
+    cp deduplicate_bismark /usr/local/bin/ && \
+    cp bismark_methylation_extractor /usr/local/bin/ && \
+    cd / && rm -rf /tmp/Bismark-0.24.1*
+
+# Install Bowtie2 (required by Bismark)
+RUN cd /tmp && \
+    wget https://github.com/BenLangmead/bowtie2/releases/download/v2.5.1/bowtie2-2.5.1-linux-x86_64.zip && \
+    unzip bowtie2-2.5.1-linux-x86_64.zip && \
+    cp bowtie2-2.5.1-linux-x86_64/bowtie2* /usr/local/bin/ && \
+    cd / && rm -rf /tmp/bowtie2-2.5.1-linux-x86_64*
+
+# Install ichorCNA dependencies
+RUN R -e "install.packages(c('optparse', 'ggplot2', 'gplots', 'copynumber'), repos='https://cran.rstudio.com/')"
+
+# Install ichorCNA
+RUN cd /tmp && \
+    git clone https://github.com/broadinstitute/ichorCNA.git && \
+    cp -r ichorCNA /usr/local/ && \
+    echo '#!/bin/bash\nRscript /usr/local/ichorCNA/scripts/runIchorCNA.R "$@"' > /usr/local/bin/runIchorCNA.R && \
+    chmod +x /usr/local/bin/runIchorCNA.R && \
+    cd / && rm -rf /tmp/ichorCNA
+
+# Install Nextflow
+RUN cd /tmp && \
+    curl -s https://get.nextflow.io | bash && \
+    mv nextflow /usr/local/bin/ && \
+    cd / && rm -rf /tmp/*
+
 # Set working directory
-WORKDIR /data
+WORKDIR /workspace
 
-# Create directories for pipeline
-RUN mkdir -p /data/{refs,resources,wes,plasma,pon,features,results,reports}
-
-# Set default command
+# Default command
 CMD ["/bin/bash"]
