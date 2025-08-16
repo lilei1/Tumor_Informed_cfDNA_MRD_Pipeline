@@ -1,11 +1,1000 @@
-fixedStep chrom=chr1 start=1 step=1
-0.45
-0.42
-0.38
-0.41
-0.39
-0.44
-0.40
-0.43
-0.37
-0.42
+fixedStep chrom=chr1 start=0 step=1000
+0.391
+fixedStep chrom=chr1 start=1000 step=1000
+0.597
+fixedStep chrom=chr1 start=2000 step=1000
+0.491
+fixedStep chrom=chr1 start=3000 step=1000
+0.546
+fixedStep chrom=chr1 start=4000 step=1000
+0.690
+fixedStep chrom=chr1 start=5000 step=1000
+0.640
+fixedStep chrom=chr1 start=6000 step=1000
+0.667
+fixedStep chrom=chr1 start=7000 step=1000
+0.515
+fixedStep chrom=chr1 start=8000 step=1000
+0.307
+fixedStep chrom=chr1 start=9000 step=1000
+0.638
+fixedStep chrom=chr1 start=10000 step=1000
+0.545
+fixedStep chrom=chr1 start=11000 step=1000
+0.411
+fixedStep chrom=chr1 start=12000 step=1000
+0.447
+fixedStep chrom=chr1 start=13000 step=1000
+0.374
+fixedStep chrom=chr1 start=14000 step=1000
+0.338
+fixedStep chrom=chr1 start=15000 step=1000
+0.653
+fixedStep chrom=chr1 start=16000 step=1000
+0.467
+fixedStep chrom=chr1 start=17000 step=1000
+0.467
+fixedStep chrom=chr1 start=18000 step=1000
+0.651
+fixedStep chrom=chr1 start=19000 step=1000
+0.534
+fixedStep chrom=chr1 start=20000 step=1000
+0.483
+fixedStep chrom=chr1 start=21000 step=1000
+0.424
+fixedStep chrom=chr1 start=22000 step=1000
+0.485
+fixedStep chrom=chr1 start=23000 step=1000
+0.587
+fixedStep chrom=chr1 start=24000 step=1000
+0.386
+fixedStep chrom=chr1 start=25000 step=1000
+0.633
+fixedStep chrom=chr1 start=26000 step=1000
+0.472
+fixedStep chrom=chr1 start=27000 step=1000
+0.616
+fixedStep chrom=chr1 start=28000 step=1000
+0.551
+fixedStep chrom=chr1 start=29000 step=1000
+0.466
+fixedStep chrom=chr1 start=30000 step=1000
+0.309
+fixedStep chrom=chr1 start=31000 step=1000
+0.427
+fixedStep chrom=chr1 start=32000 step=1000
+0.392
+fixedStep chrom=chr1 start=33000 step=1000
+0.331
+fixedStep chrom=chr1 start=34000 step=1000
+0.639
+fixedStep chrom=chr1 start=35000 step=1000
+0.436
+fixedStep chrom=chr1 start=36000 step=1000
+0.599
+fixedStep chrom=chr1 start=37000 step=1000
+0.439
+fixedStep chrom=chr1 start=38000 step=1000
+0.346
+fixedStep chrom=chr1 start=39000 step=1000
+0.442
+fixedStep chrom=chr1 start=40000 step=1000
+0.309
+fixedStep chrom=chr1 start=41000 step=1000
+0.347
+fixedStep chrom=chr1 start=42000 step=1000
+0.408
+fixedStep chrom=chr1 start=43000 step=1000
+0.584
+fixedStep chrom=chr1 start=44000 step=1000
+0.322
+fixedStep chrom=chr1 start=45000 step=1000
+0.397
+fixedStep chrom=chr1 start=46000 step=1000
+0.533
+fixedStep chrom=chr1 start=47000 step=1000
+0.628
+fixedStep chrom=chr1 start=48000 step=1000
+0.425
+fixedStep chrom=chr1 start=49000 step=1000
+0.429
+fixedStep chrom=chr1 start=50000 step=1000
+0.422
+fixedStep chrom=chr1 start=51000 step=1000
+0.506
+fixedStep chrom=chr1 start=52000 step=1000
+0.584
+fixedStep chrom=chr1 start=53000 step=1000
+0.337
+fixedStep chrom=chr1 start=54000 step=1000
+0.660
+fixedStep chrom=chr1 start=55000 step=1000
+0.518
+fixedStep chrom=chr1 start=56000 step=1000
+0.467
+fixedStep chrom=chr1 start=57000 step=1000
+0.460
+fixedStep chrom=chr1 start=58000 step=1000
+0.579
+fixedStep chrom=chr1 start=59000 step=1000
+0.622
+fixedStep chrom=chr1 start=60000 step=1000
+0.316
+fixedStep chrom=chr1 start=61000 step=1000
+0.687
+fixedStep chrom=chr1 start=62000 step=1000
+0.674
+fixedStep chrom=chr1 start=63000 step=1000
+0.382
+fixedStep chrom=chr1 start=64000 step=1000
+0.464
+fixedStep chrom=chr1 start=65000 step=1000
+0.367
+fixedStep chrom=chr1 start=66000 step=1000
+0.386
+fixedStep chrom=chr1 start=67000 step=1000
+0.549
+fixedStep chrom=chr1 start=68000 step=1000
+0.384
+fixedStep chrom=chr1 start=69000 step=1000
+0.463
+fixedStep chrom=chr1 start=70000 step=1000
+0.542
+fixedStep chrom=chr1 start=71000 step=1000
+0.674
+fixedStep chrom=chr1 start=72000 step=1000
+0.361
+fixedStep chrom=chr1 start=73000 step=1000
+0.605
+fixedStep chrom=chr1 start=74000 step=1000
+0.456
+fixedStep chrom=chr1 start=75000 step=1000
+0.369
+fixedStep chrom=chr1 start=76000 step=1000
+0.505
+fixedStep chrom=chr1 start=77000 step=1000
+0.656
+fixedStep chrom=chr1 start=78000 step=1000
+0.680
+fixedStep chrom=chr1 start=79000 step=1000
+0.455
+fixedStep chrom=chr1 start=80000 step=1000
+0.509
+fixedStep chrom=chr1 start=81000 step=1000
+0.431
+fixedStep chrom=chr1 start=82000 step=1000
+0.488
+fixedStep chrom=chr1 start=83000 step=1000
+0.592
+fixedStep chrom=chr1 start=84000 step=1000
+0.492
+fixedStep chrom=chr1 start=85000 step=1000
+0.351
+fixedStep chrom=chr1 start=86000 step=1000
+0.517
+fixedStep chrom=chr1 start=87000 step=1000
+0.381
+fixedStep chrom=chr1 start=88000 step=1000
+0.666
+fixedStep chrom=chr1 start=89000 step=1000
+0.379
+fixedStep chrom=chr1 start=90000 step=1000
+0.570
+fixedStep chrom=chr1 start=91000 step=1000
+0.316
+fixedStep chrom=chr1 start=92000 step=1000
+0.495
+fixedStep chrom=chr1 start=93000 step=1000
+0.503
+fixedStep chrom=chr1 start=94000 step=1000
+0.397
+fixedStep chrom=chr1 start=95000 step=1000
+0.579
+fixedStep chrom=chr1 start=96000 step=1000
+0.495
+fixedStep chrom=chr1 start=97000 step=1000
+0.629
+fixedStep chrom=chr1 start=98000 step=1000
+0.698
+fixedStep chrom=chr1 start=99000 step=1000
+0.643
+fixedStep chrom=chr2 start=0 step=1000
+0.571
+fixedStep chrom=chr2 start=1000 step=1000
+0.623
+fixedStep chrom=chr2 start=2000 step=1000
+0.598
+fixedStep chrom=chr2 start=3000 step=1000
+0.485
+fixedStep chrom=chr2 start=4000 step=1000
+0.632
+fixedStep chrom=chr2 start=5000 step=1000
+0.509
+fixedStep chrom=chr2 start=6000 step=1000
+0.403
+fixedStep chrom=chr2 start=7000 step=1000
+0.472
+fixedStep chrom=chr2 start=8000 step=1000
+0.676
+fixedStep chrom=chr2 start=9000 step=1000
+0.659
+fixedStep chrom=chr2 start=10000 step=1000
+0.686
+fixedStep chrom=chr2 start=11000 step=1000
+0.321
+fixedStep chrom=chr2 start=12000 step=1000
+0.673
+fixedStep chrom=chr2 start=13000 step=1000
+0.408
+fixedStep chrom=chr2 start=14000 step=1000
+0.556
+fixedStep chrom=chr2 start=15000 step=1000
+0.444
+fixedStep chrom=chr2 start=16000 step=1000
+0.682
+fixedStep chrom=chr2 start=17000 step=1000
+0.333
+fixedStep chrom=chr2 start=18000 step=1000
+0.479
+fixedStep chrom=chr2 start=19000 step=1000
+0.608
+fixedStep chrom=chr2 start=20000 step=1000
+0.349
+fixedStep chrom=chr2 start=21000 step=1000
+0.688
+fixedStep chrom=chr2 start=22000 step=1000
+0.690
+fixedStep chrom=chr2 start=23000 step=1000
+0.467
+fixedStep chrom=chr2 start=24000 step=1000
+0.529
+fixedStep chrom=chr2 start=25000 step=1000
+0.387
+fixedStep chrom=chr2 start=26000 step=1000
+0.487
+fixedStep chrom=chr2 start=27000 step=1000
+0.691
+fixedStep chrom=chr2 start=28000 step=1000
+0.483
+fixedStep chrom=chr2 start=29000 step=1000
+0.529
+fixedStep chrom=chr2 start=30000 step=1000
+0.520
+fixedStep chrom=chr2 start=31000 step=1000
+0.330
+fixedStep chrom=chr2 start=32000 step=1000
+0.622
+fixedStep chrom=chr2 start=33000 step=1000
+0.435
+fixedStep chrom=chr2 start=34000 step=1000
+0.571
+fixedStep chrom=chr2 start=35000 step=1000
+0.492
+fixedStep chrom=chr2 start=36000 step=1000
+0.327
+fixedStep chrom=chr2 start=37000 step=1000
+0.399
+fixedStep chrom=chr2 start=38000 step=1000
+0.530
+fixedStep chrom=chr2 start=39000 step=1000
+0.674
+fixedStep chrom=chr2 start=40000 step=1000
+0.304
+fixedStep chrom=chr2 start=41000 step=1000
+0.334
+fixedStep chrom=chr2 start=42000 step=1000
+0.362
+fixedStep chrom=chr2 start=43000 step=1000
+0.621
+fixedStep chrom=chr2 start=44000 step=1000
+0.340
+fixedStep chrom=chr2 start=45000 step=1000
+0.553
+fixedStep chrom=chr2 start=46000 step=1000
+0.536
+fixedStep chrom=chr2 start=47000 step=1000
+0.659
+fixedStep chrom=chr2 start=48000 step=1000
+0.419
+fixedStep chrom=chr2 start=49000 step=1000
+0.552
+fixedStep chrom=chr2 start=50000 step=1000
+0.499
+fixedStep chrom=chr2 start=51000 step=1000
+0.576
+fixedStep chrom=chr2 start=52000 step=1000
+0.550
+fixedStep chrom=chr2 start=53000 step=1000
+0.307
+fixedStep chrom=chr2 start=54000 step=1000
+0.573
+fixedStep chrom=chr2 start=55000 step=1000
+0.648
+fixedStep chrom=chr2 start=56000 step=1000
+0.326
+fixedStep chrom=chr2 start=57000 step=1000
+0.448
+fixedStep chrom=chr2 start=58000 step=1000
+0.511
+fixedStep chrom=chr2 start=59000 step=1000
+0.672
+fixedStep chrom=chr2 start=60000 step=1000
+0.471
+fixedStep chrom=chr2 start=61000 step=1000
+0.305
+fixedStep chrom=chr2 start=62000 step=1000
+0.519
+fixedStep chrom=chr2 start=63000 step=1000
+0.570
+fixedStep chrom=chr2 start=64000 step=1000
+0.527
+fixedStep chrom=chr2 start=65000 step=1000
+0.656
+fixedStep chrom=chr2 start=66000 step=1000
+0.486
+fixedStep chrom=chr2 start=67000 step=1000
+0.397
+fixedStep chrom=chr2 start=68000 step=1000
+0.458
+fixedStep chrom=chr2 start=69000 step=1000
+0.609
+fixedStep chrom=chr2 start=70000 step=1000
+0.694
+fixedStep chrom=chr2 start=71000 step=1000
+0.447
+fixedStep chrom=chr2 start=72000 step=1000
+0.547
+fixedStep chrom=chr2 start=73000 step=1000
+0.595
+fixedStep chrom=chr2 start=74000 step=1000
+0.461
+fixedStep chrom=chr2 start=75000 step=1000
+0.407
+fixedStep chrom=chr2 start=76000 step=1000
+0.528
+fixedStep chrom=chr2 start=77000 step=1000
+0.375
+fixedStep chrom=chr2 start=78000 step=1000
+0.537
+fixedStep chrom=chr2 start=79000 step=1000
+0.385
+fixedStep chrom=chr2 start=80000 step=1000
+0.534
+fixedStep chrom=chr2 start=81000 step=1000
+0.599
+fixedStep chrom=chr2 start=82000 step=1000
+0.648
+fixedStep chrom=chr2 start=83000 step=1000
+0.531
+fixedStep chrom=chr2 start=84000 step=1000
+0.484
+fixedStep chrom=chr2 start=85000 step=1000
+0.317
+fixedStep chrom=chr2 start=86000 step=1000
+0.507
+fixedStep chrom=chr2 start=87000 step=1000
+0.687
+fixedStep chrom=chr2 start=88000 step=1000
+0.616
+fixedStep chrom=chr2 start=89000 step=1000
+0.387
+fixedStep chrom=chr2 start=90000 step=1000
+0.446
+fixedStep chrom=chr2 start=91000 step=1000
+0.544
+fixedStep chrom=chr2 start=92000 step=1000
+0.446
+fixedStep chrom=chr2 start=93000 step=1000
+0.613
+fixedStep chrom=chr2 start=94000 step=1000
+0.670
+fixedStep chrom=chr2 start=95000 step=1000
+0.597
+fixedStep chrom=chr2 start=96000 step=1000
+0.666
+fixedStep chrom=chr2 start=97000 step=1000
+0.622
+fixedStep chrom=chr2 start=98000 step=1000
+0.349
+fixedStep chrom=chr2 start=99000 step=1000
+0.446
+fixedStep chrom=chr3 start=0 step=1000
+0.525
+fixedStep chrom=chr3 start=1000 step=1000
+0.453
+fixedStep chrom=chr3 start=2000 step=1000
+0.337
+fixedStep chrom=chr3 start=3000 step=1000
+0.688
+fixedStep chrom=chr3 start=4000 step=1000
+0.361
+fixedStep chrom=chr3 start=5000 step=1000
+0.550
+fixedStep chrom=chr3 start=6000 step=1000
+0.683
+fixedStep chrom=chr3 start=7000 step=1000
+0.473
+fixedStep chrom=chr3 start=8000 step=1000
+0.685
+fixedStep chrom=chr3 start=9000 step=1000
+0.409
+fixedStep chrom=chr3 start=10000 step=1000
+0.481
+fixedStep chrom=chr3 start=11000 step=1000
+0.337
+fixedStep chrom=chr3 start=12000 step=1000
+0.329
+fixedStep chrom=chr3 start=13000 step=1000
+0.555
+fixedStep chrom=chr3 start=14000 step=1000
+0.631
+fixedStep chrom=chr3 start=15000 step=1000
+0.458
+fixedStep chrom=chr3 start=16000 step=1000
+0.415
+fixedStep chrom=chr3 start=17000 step=1000
+0.681
+fixedStep chrom=chr3 start=18000 step=1000
+0.537
+fixedStep chrom=chr3 start=19000 step=1000
+0.665
+fixedStep chrom=chr3 start=20000 step=1000
+0.527
+fixedStep chrom=chr3 start=21000 step=1000
+0.578
+fixedStep chrom=chr3 start=22000 step=1000
+0.602
+fixedStep chrom=chr3 start=23000 step=1000
+0.408
+fixedStep chrom=chr3 start=24000 step=1000
+0.408
+fixedStep chrom=chr3 start=25000 step=1000
+0.540
+fixedStep chrom=chr3 start=26000 step=1000
+0.521
+fixedStep chrom=chr3 start=27000 step=1000
+0.382
+fixedStep chrom=chr3 start=28000 step=1000
+0.595
+fixedStep chrom=chr3 start=29000 step=1000
+0.342
+fixedStep chrom=chr3 start=30000 step=1000
+0.681
+fixedStep chrom=chr3 start=31000 step=1000
+0.324
+fixedStep chrom=chr3 start=32000 step=1000
+0.599
+fixedStep chrom=chr3 start=33000 step=1000
+0.304
+fixedStep chrom=chr3 start=34000 step=1000
+0.390
+fixedStep chrom=chr3 start=35000 step=1000
+0.504
+fixedStep chrom=chr3 start=36000 step=1000
+0.325
+fixedStep chrom=chr3 start=37000 step=1000
+0.450
+fixedStep chrom=chr3 start=38000 step=1000
+0.667
+fixedStep chrom=chr3 start=39000 step=1000
+0.511
+fixedStep chrom=chr3 start=40000 step=1000
+0.693
+fixedStep chrom=chr3 start=41000 step=1000
+0.374
+fixedStep chrom=chr3 start=42000 step=1000
+0.462
+fixedStep chrom=chr3 start=43000 step=1000
+0.667
+fixedStep chrom=chr3 start=44000 step=1000
+0.368
+fixedStep chrom=chr3 start=45000 step=1000
+0.304
+fixedStep chrom=chr3 start=46000 step=1000
+0.364
+fixedStep chrom=chr3 start=47000 step=1000
+0.433
+fixedStep chrom=chr3 start=48000 step=1000
+0.385
+fixedStep chrom=chr3 start=49000 step=1000
+0.495
+fixedStep chrom=chr3 start=50000 step=1000
+0.524
+fixedStep chrom=chr3 start=51000 step=1000
+0.355
+fixedStep chrom=chr3 start=52000 step=1000
+0.562
+fixedStep chrom=chr3 start=53000 step=1000
+0.553
+fixedStep chrom=chr3 start=54000 step=1000
+0.468
+fixedStep chrom=chr3 start=55000 step=1000
+0.317
+fixedStep chrom=chr3 start=56000 step=1000
+0.502
+fixedStep chrom=chr3 start=57000 step=1000
+0.422
+fixedStep chrom=chr3 start=58000 step=1000
+0.638
+fixedStep chrom=chr3 start=59000 step=1000
+0.446
+fixedStep chrom=chr3 start=60000 step=1000
+0.479
+fixedStep chrom=chr3 start=61000 step=1000
+0.307
+fixedStep chrom=chr3 start=62000 step=1000
+0.489
+fixedStep chrom=chr3 start=63000 step=1000
+0.538
+fixedStep chrom=chr3 start=64000 step=1000
+0.370
+fixedStep chrom=chr3 start=65000 step=1000
+0.407
+fixedStep chrom=chr3 start=66000 step=1000
+0.626
+fixedStep chrom=chr3 start=67000 step=1000
+0.457
+fixedStep chrom=chr3 start=68000 step=1000
+0.453
+fixedStep chrom=chr3 start=69000 step=1000
+0.535
+fixedStep chrom=chr3 start=70000 step=1000
+0.679
+fixedStep chrom=chr3 start=71000 step=1000
+0.365
+fixedStep chrom=chr3 start=72000 step=1000
+0.332
+fixedStep chrom=chr3 start=73000 step=1000
+0.494
+fixedStep chrom=chr3 start=74000 step=1000
+0.393
+fixedStep chrom=chr3 start=75000 step=1000
+0.390
+fixedStep chrom=chr3 start=76000 step=1000
+0.320
+fixedStep chrom=chr3 start=77000 step=1000
+0.642
+fixedStep chrom=chr3 start=78000 step=1000
+0.520
+fixedStep chrom=chr3 start=79000 step=1000
+0.373
+fixedStep chrom=chr3 start=80000 step=1000
+0.435
+fixedStep chrom=chr3 start=81000 step=1000
+0.677
+fixedStep chrom=chr3 start=82000 step=1000
+0.596
+fixedStep chrom=chr3 start=83000 step=1000
+0.665
+fixedStep chrom=chr3 start=84000 step=1000
+0.599
+fixedStep chrom=chr3 start=85000 step=1000
+0.645
+fixedStep chrom=chr3 start=86000 step=1000
+0.414
+fixedStep chrom=chr3 start=87000 step=1000
+0.335
+fixedStep chrom=chr3 start=88000 step=1000
+0.382
+fixedStep chrom=chr3 start=89000 step=1000
+0.448
+fixedStep chrom=chr3 start=90000 step=1000
+0.689
+fixedStep chrom=chr3 start=91000 step=1000
+0.582
+fixedStep chrom=chr3 start=92000 step=1000
+0.527
+fixedStep chrom=chr3 start=93000 step=1000
+0.695
+fixedStep chrom=chr3 start=94000 step=1000
+0.303
+fixedStep chrom=chr3 start=95000 step=1000
+0.450
+fixedStep chrom=chr3 start=96000 step=1000
+0.508
+fixedStep chrom=chr3 start=97000 step=1000
+0.302
+fixedStep chrom=chr3 start=98000 step=1000
+0.586
+fixedStep chrom=chr3 start=99000 step=1000
+0.406
+fixedStep chrom=chr4 start=0 step=1000
+0.520
+fixedStep chrom=chr4 start=1000 step=1000
+0.354
+fixedStep chrom=chr4 start=2000 step=1000
+0.547
+fixedStep chrom=chr4 start=3000 step=1000
+0.519
+fixedStep chrom=chr4 start=4000 step=1000
+0.687
+fixedStep chrom=chr4 start=5000 step=1000
+0.311
+fixedStep chrom=chr4 start=6000 step=1000
+0.332
+fixedStep chrom=chr4 start=7000 step=1000
+0.618
+fixedStep chrom=chr4 start=8000 step=1000
+0.505
+fixedStep chrom=chr4 start=9000 step=1000
+0.310
+fixedStep chrom=chr4 start=10000 step=1000
+0.364
+fixedStep chrom=chr4 start=11000 step=1000
+0.347
+fixedStep chrom=chr4 start=12000 step=1000
+0.528
+fixedStep chrom=chr4 start=13000 step=1000
+0.665
+fixedStep chrom=chr4 start=14000 step=1000
+0.516
+fixedStep chrom=chr4 start=15000 step=1000
+0.679
+fixedStep chrom=chr4 start=16000 step=1000
+0.683
+fixedStep chrom=chr4 start=17000 step=1000
+0.469
+fixedStep chrom=chr4 start=18000 step=1000
+0.378
+fixedStep chrom=chr4 start=19000 step=1000
+0.308
+fixedStep chrom=chr4 start=20000 step=1000
+0.308
+fixedStep chrom=chr4 start=21000 step=1000
+0.503
+fixedStep chrom=chr4 start=22000 step=1000
+0.403
+fixedStep chrom=chr4 start=23000 step=1000
+0.464
+fixedStep chrom=chr4 start=24000 step=1000
+0.312
+fixedStep chrom=chr4 start=25000 step=1000
+0.607
+fixedStep chrom=chr4 start=26000 step=1000
+0.670
+fixedStep chrom=chr4 start=27000 step=1000
+0.497
+fixedStep chrom=chr4 start=28000 step=1000
+0.561
+fixedStep chrom=chr4 start=29000 step=1000
+0.398
+fixedStep chrom=chr4 start=30000 step=1000
+0.491
+fixedStep chrom=chr4 start=31000 step=1000
+0.522
+fixedStep chrom=chr4 start=32000 step=1000
+0.508
+fixedStep chrom=chr4 start=33000 step=1000
+0.516
+fixedStep chrom=chr4 start=34000 step=1000
+0.542
+fixedStep chrom=chr4 start=35000 step=1000
+0.389
+fixedStep chrom=chr4 start=36000 step=1000
+0.478
+fixedStep chrom=chr4 start=37000 step=1000
+0.309
+fixedStep chrom=chr4 start=38000 step=1000
+0.553
+fixedStep chrom=chr4 start=39000 step=1000
+0.494
+fixedStep chrom=chr4 start=40000 step=1000
+0.516
+fixedStep chrom=chr4 start=41000 step=1000
+0.603
+fixedStep chrom=chr4 start=42000 step=1000
+0.643
+fixedStep chrom=chr4 start=43000 step=1000
+0.448
+fixedStep chrom=chr4 start=44000 step=1000
+0.355
+fixedStep chrom=chr4 start=45000 step=1000
+0.669
+fixedStep chrom=chr4 start=46000 step=1000
+0.358
+fixedStep chrom=chr4 start=47000 step=1000
+0.422
+fixedStep chrom=chr4 start=48000 step=1000
+0.558
+fixedStep chrom=chr4 start=49000 step=1000
+0.364
+fixedStep chrom=chr4 start=50000 step=1000
+0.382
+fixedStep chrom=chr4 start=51000 step=1000
+0.539
+fixedStep chrom=chr4 start=52000 step=1000
+0.492
+fixedStep chrom=chr4 start=53000 step=1000
+0.384
+fixedStep chrom=chr4 start=54000 step=1000
+0.328
+fixedStep chrom=chr4 start=55000 step=1000
+0.362
+fixedStep chrom=chr4 start=56000 step=1000
+0.368
+fixedStep chrom=chr4 start=57000 step=1000
+0.396
+fixedStep chrom=chr4 start=58000 step=1000
+0.560
+fixedStep chrom=chr4 start=59000 step=1000
+0.398
+fixedStep chrom=chr4 start=60000 step=1000
+0.640
+fixedStep chrom=chr4 start=61000 step=1000
+0.546
+fixedStep chrom=chr4 start=62000 step=1000
+0.489
+fixedStep chrom=chr4 start=63000 step=1000
+0.658
+fixedStep chrom=chr4 start=64000 step=1000
+0.467
+fixedStep chrom=chr4 start=65000 step=1000
+0.690
+fixedStep chrom=chr4 start=66000 step=1000
+0.449
+fixedStep chrom=chr4 start=67000 step=1000
+0.688
+fixedStep chrom=chr4 start=68000 step=1000
+0.546
+fixedStep chrom=chr4 start=69000 step=1000
+0.672
+fixedStep chrom=chr4 start=70000 step=1000
+0.628
+fixedStep chrom=chr4 start=71000 step=1000
+0.328
+fixedStep chrom=chr4 start=72000 step=1000
+0.367
+fixedStep chrom=chr4 start=73000 step=1000
+0.327
+fixedStep chrom=chr4 start=74000 step=1000
+0.322
+fixedStep chrom=chr4 start=75000 step=1000
+0.681
+fixedStep chrom=chr4 start=76000 step=1000
+0.346
+fixedStep chrom=chr4 start=77000 step=1000
+0.684
+fixedStep chrom=chr4 start=78000 step=1000
+0.596
+fixedStep chrom=chr4 start=79000 step=1000
+0.487
+fixedStep chrom=chr4 start=80000 step=1000
+0.613
+fixedStep chrom=chr4 start=81000 step=1000
+0.463
+fixedStep chrom=chr4 start=82000 step=1000
+0.305
+fixedStep chrom=chr4 start=83000 step=1000
+0.491
+fixedStep chrom=chr4 start=84000 step=1000
+0.496
+fixedStep chrom=chr4 start=85000 step=1000
+0.608
+fixedStep chrom=chr4 start=86000 step=1000
+0.358
+fixedStep chrom=chr4 start=87000 step=1000
+0.327
+fixedStep chrom=chr4 start=88000 step=1000
+0.662
+fixedStep chrom=chr4 start=89000 step=1000
+0.332
+fixedStep chrom=chr4 start=90000 step=1000
+0.370
+fixedStep chrom=chr4 start=91000 step=1000
+0.547
+fixedStep chrom=chr4 start=92000 step=1000
+0.604
+fixedStep chrom=chr4 start=93000 step=1000
+0.326
+fixedStep chrom=chr4 start=94000 step=1000
+0.407
+fixedStep chrom=chr4 start=95000 step=1000
+0.602
+fixedStep chrom=chr4 start=96000 step=1000
+0.356
+fixedStep chrom=chr4 start=97000 step=1000
+0.378
+fixedStep chrom=chr4 start=98000 step=1000
+0.357
+fixedStep chrom=chr4 start=99000 step=1000
+0.552
+fixedStep chrom=chr5 start=0 step=1000
+0.590
+fixedStep chrom=chr5 start=1000 step=1000
+0.687
+fixedStep chrom=chr5 start=2000 step=1000
+0.308
+fixedStep chrom=chr5 start=3000 step=1000
+0.550
+fixedStep chrom=chr5 start=4000 step=1000
+0.620
+fixedStep chrom=chr5 start=5000 step=1000
+0.638
+fixedStep chrom=chr5 start=6000 step=1000
+0.328
+fixedStep chrom=chr5 start=7000 step=1000
+0.505
+fixedStep chrom=chr5 start=8000 step=1000
+0.365
+fixedStep chrom=chr5 start=9000 step=1000
+0.330
+fixedStep chrom=chr5 start=10000 step=1000
+0.344
+fixedStep chrom=chr5 start=11000 step=1000
+0.327
+fixedStep chrom=chr5 start=12000 step=1000
+0.300
+fixedStep chrom=chr5 start=13000 step=1000
+0.488
+fixedStep chrom=chr5 start=14000 step=1000
+0.582
+fixedStep chrom=chr5 start=15000 step=1000
+0.450
+fixedStep chrom=chr5 start=16000 step=1000
+0.533
+fixedStep chrom=chr5 start=17000 step=1000
+0.538
+fixedStep chrom=chr5 start=18000 step=1000
+0.695
+fixedStep chrom=chr5 start=19000 step=1000
+0.433
+fixedStep chrom=chr5 start=20000 step=1000
+0.460
+fixedStep chrom=chr5 start=21000 step=1000
+0.361
+fixedStep chrom=chr5 start=22000 step=1000
+0.655
+fixedStep chrom=chr5 start=23000 step=1000
+0.594
+fixedStep chrom=chr5 start=24000 step=1000
+0.584
+fixedStep chrom=chr5 start=25000 step=1000
+0.509
+fixedStep chrom=chr5 start=26000 step=1000
+0.532
+fixedStep chrom=chr5 start=27000 step=1000
+0.497
+fixedStep chrom=chr5 start=28000 step=1000
+0.629
+fixedStep chrom=chr5 start=29000 step=1000
+0.449
+fixedStep chrom=chr5 start=30000 step=1000
+0.587
+fixedStep chrom=chr5 start=31000 step=1000
+0.603
+fixedStep chrom=chr5 start=32000 step=1000
+0.497
+fixedStep chrom=chr5 start=33000 step=1000
+0.307
+fixedStep chrom=chr5 start=34000 step=1000
+0.545
+fixedStep chrom=chr5 start=35000 step=1000
+0.499
+fixedStep chrom=chr5 start=36000 step=1000
+0.524
+fixedStep chrom=chr5 start=37000 step=1000
+0.651
+fixedStep chrom=chr5 start=38000 step=1000
+0.309
+fixedStep chrom=chr5 start=39000 step=1000
+0.335
+fixedStep chrom=chr5 start=40000 step=1000
+0.515
+fixedStep chrom=chr5 start=41000 step=1000
+0.397
+fixedStep chrom=chr5 start=42000 step=1000
+0.413
+fixedStep chrom=chr5 start=43000 step=1000
+0.452
+fixedStep chrom=chr5 start=44000 step=1000
+0.559
+fixedStep chrom=chr5 start=45000 step=1000
+0.681
+fixedStep chrom=chr5 start=46000 step=1000
+0.627
+fixedStep chrom=chr5 start=47000 step=1000
+0.459
+fixedStep chrom=chr5 start=48000 step=1000
+0.602
+fixedStep chrom=chr5 start=49000 step=1000
+0.658
+fixedStep chrom=chr5 start=50000 step=1000
+0.698
+fixedStep chrom=chr5 start=51000 step=1000
+0.385
+fixedStep chrom=chr5 start=52000 step=1000
+0.410
+fixedStep chrom=chr5 start=53000 step=1000
+0.457
+fixedStep chrom=chr5 start=54000 step=1000
+0.600
+fixedStep chrom=chr5 start=55000 step=1000
+0.690
+fixedStep chrom=chr5 start=56000 step=1000
+0.330
+fixedStep chrom=chr5 start=57000 step=1000
+0.386
+fixedStep chrom=chr5 start=58000 step=1000
+0.575
+fixedStep chrom=chr5 start=59000 step=1000
+0.336
+fixedStep chrom=chr5 start=60000 step=1000
+0.632
+fixedStep chrom=chr5 start=61000 step=1000
+0.673
+fixedStep chrom=chr5 start=62000 step=1000
+0.625
+fixedStep chrom=chr5 start=63000 step=1000
+0.439
+fixedStep chrom=chr5 start=64000 step=1000
+0.378
+fixedStep chrom=chr5 start=65000 step=1000
+0.341
+fixedStep chrom=chr5 start=66000 step=1000
+0.443
+fixedStep chrom=chr5 start=67000 step=1000
+0.320
+fixedStep chrom=chr5 start=68000 step=1000
+0.542
+fixedStep chrom=chr5 start=69000 step=1000
+0.533
+fixedStep chrom=chr5 start=70000 step=1000
+0.675
+fixedStep chrom=chr5 start=71000 step=1000
+0.538
+fixedStep chrom=chr5 start=72000 step=1000
+0.372
+fixedStep chrom=chr5 start=73000 step=1000
+0.686
+fixedStep chrom=chr5 start=74000 step=1000
+0.390
+fixedStep chrom=chr5 start=75000 step=1000
+0.380
+fixedStep chrom=chr5 start=76000 step=1000
+0.351
+fixedStep chrom=chr5 start=77000 step=1000
+0.646
+fixedStep chrom=chr5 start=78000 step=1000
+0.351
+fixedStep chrom=chr5 start=79000 step=1000
+0.371
+fixedStep chrom=chr5 start=80000 step=1000
+0.345
+fixedStep chrom=chr5 start=81000 step=1000
+0.538
+fixedStep chrom=chr5 start=82000 step=1000
+0.417
+fixedStep chrom=chr5 start=83000 step=1000
+0.514
+fixedStep chrom=chr5 start=84000 step=1000
+0.450
+fixedStep chrom=chr5 start=85000 step=1000
+0.380
+fixedStep chrom=chr5 start=86000 step=1000
+0.363
+fixedStep chrom=chr5 start=87000 step=1000
+0.558
+fixedStep chrom=chr5 start=88000 step=1000
+0.479
+fixedStep chrom=chr5 start=89000 step=1000
+0.309
+fixedStep chrom=chr5 start=90000 step=1000
+0.408
+fixedStep chrom=chr5 start=91000 step=1000
+0.437
+fixedStep chrom=chr5 start=92000 step=1000
+0.614
+fixedStep chrom=chr5 start=93000 step=1000
+0.638
+fixedStep chrom=chr5 start=94000 step=1000
+0.640
+fixedStep chrom=chr5 start=95000 step=1000
+0.439
+fixedStep chrom=chr5 start=96000 step=1000
+0.660
+fixedStep chrom=chr5 start=97000 step=1000
+0.362
+fixedStep chrom=chr5 start=98000 step=1000
+0.423
+fixedStep chrom=chr5 start=99000 step=1000
+0.349
