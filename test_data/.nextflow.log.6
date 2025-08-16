@@ -1,42 +1,42 @@
-Aug-15 16:38:55.715 [main] DEBUG nextflow.cli.Launcher - $> nextflow run test_workflow.nf
-Aug-15 16:38:55.750 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 25.04.6
-Aug-15 16:38:55.761 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/Users/lilei/.nextflow/plugins; core-plugins: nf-amazon@2.15.0,nf-azure@1.16.0,nf-cloudcache@0.4.3,nf-codecommit@0.2.3,nf-console@1.2.1,nf-google@1.21.1,nf-k8s@1.0.0,nf-tower@1.11.4,nf-wave@1.12.1
-Aug-15 16:38:55.777 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
-Aug-15 16:38:55.777 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
-Aug-15 16:38:55.778 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
-Aug-15 16:38:55.784 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
-Aug-15 16:38:55.792 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /Users/lilei/Downloads/Tumor_Informed_cfDNA_MRD_Pipeline/test_data/nextflow.config
-Aug-15 16:38:55.793 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/lilei/Downloads/Tumor_Informed_cfDNA_MRD_Pipeline/test_data/nextflow.config
-Aug-15 16:38:55.808 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /Users/lilei/.nextflow/secrets/store.json
-Aug-15 16:38:55.810 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@76b224cd] - activable => nextflow.secret.LocalSecretsProvider@76b224cd
-Aug-15 16:38:55.812 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
-Aug-15 16:38:56.016 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
-Aug-15 16:38:56.021 [main] DEBUG nextflow.cli.CmdRun - Launching `test_workflow.nf` [loving_heyrovsky] DSL2 - revision: d48b6e1e0b
-Aug-15 16:38:56.022 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
-Aug-15 16:38:56.022 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
-Aug-15 16:38:56.039 [main] DEBUG nextflow.Session - Session UUID: 46e77bfc-a194-4092-b0bf-91ce5fd4fea2
-Aug-15 16:38:56.040 [main] DEBUG nextflow.Session - Run name: loving_heyrovsky
-Aug-15 16:38:56.040 [main] DEBUG nextflow.Session - Executor pool size: 16
-Aug-15 16:38:56.043 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
-Aug-15 16:38:56.045 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=48; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
-Aug-15 16:38:56.056 [main] DEBUG nextflow.cli.CmdRun - 
+Aug-15 20:39:56.024 [main] DEBUG nextflow.cli.Launcher - $> nextflow run test_step2.nf
+Aug-15 20:39:56.062 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 25.04.6
+Aug-15 20:39:56.074 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/Users/lilei/.nextflow/plugins; core-plugins: nf-amazon@2.15.0,nf-azure@1.16.0,nf-cloudcache@0.4.3,nf-codecommit@0.2.3,nf-console@1.2.1,nf-google@1.21.1,nf-k8s@1.0.0,nf-tower@1.11.4,nf-wave@1.12.1
+Aug-15 20:39:56.094 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Aug-15 20:39:56.094 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Aug-15 20:39:56.095 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+Aug-15 20:39:56.102 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Aug-15 20:39:56.110 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /Users/lilei/Downloads/Tumor_Informed_cfDNA_MRD_Pipeline/test_data/nextflow.config
+Aug-15 20:39:56.111 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/lilei/Downloads/Tumor_Informed_cfDNA_MRD_Pipeline/test_data/nextflow.config
+Aug-15 20:39:56.131 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /Users/lilei/.nextflow/secrets/store.json
+Aug-15 20:39:56.132 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@368d5c00] - activable => nextflow.secret.LocalSecretsProvider@368d5c00
+Aug-15 20:39:56.134 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Aug-15 20:39:56.351 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Aug-15 20:39:56.358 [main] DEBUG nextflow.cli.CmdRun - Launching `test_step2.nf` [big_aryabhata] DSL2 - revision: 77c9c8d30f
+Aug-15 20:39:56.359 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Aug-15 20:39:56.359 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Aug-15 20:39:56.388 [main] DEBUG nextflow.Session - Session UUID: 2637d60f-7ed0-4b32-9eb8-6f860b8737f6
+Aug-15 20:39:56.388 [main] DEBUG nextflow.Session - Run name: big_aryabhata
+Aug-15 20:39:56.388 [main] DEBUG nextflow.Session - Executor pool size: 16
+Aug-15 20:39:56.392 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Aug-15 20:39:56.395 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=48; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Aug-15 20:39:56.411 [main] DEBUG nextflow.cli.CmdRun - 
   Version: 25.04.6 build 5954
   Created: 01-07-2025 11:27 UTC (04:27 PDT)
   System: Mac OS X 15.6
   Runtime: Groovy 4.0.26 on OpenJDK 64-Bit Server VM 21.0.6+9-b895.97
   Encoding: UTF-8 (UTF-8)
-  Process: 38136@LiLei-M36.local [127.0.0.1]
-  CPUs: 16 - Mem: 48 GB (548 MB) - Swap: 0 (0)
-Aug-15 16:38:56.063 [main] DEBUG nextflow.Session - Work-dir: /Users/lilei/Downloads/Tumor_Informed_cfDNA_MRD_Pipeline/test_data/work [Mac OS X]
-Aug-15 16:38:56.063 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /Users/lilei/Downloads/Tumor_Informed_cfDNA_MRD_Pipeline/test_data/bin
-Aug-15 16:38:56.068 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
-Aug-15 16:38:56.071 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
-Aug-15 16:38:56.077 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
-Aug-15 16:38:56.087 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
-Aug-15 16:38:56.090 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 17; maxThreads: 1000
-Aug-15 16:38:56.114 [main] DEBUG nextflow.Session - Session start
-Aug-15 16:38:56.115 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /Users/lilei/Downloads/Tumor_Informed_cfDNA_MRD_Pipeline/test_data/results/trace.txt
-Aug-15 16:38:56.116 [main] DEBUG nextflow.Session - Trace file already exists: /Users/lilei/Downloads/Tumor_Informed_cfDNA_MRD_Pipeline/test_data/results/trace.txt -- enable the 'trace.overwrite' option in your config file to overwrite existing files
+  Process: 52995@LiLei-M36.local [127.0.0.1]
+  CPUs: 16 - Mem: 48 GB (76.5 MB) - Swap: 0 (0)
+Aug-15 20:39:56.419 [main] DEBUG nextflow.Session - Work-dir: /Users/lilei/Downloads/Tumor_Informed_cfDNA_MRD_Pipeline/test_data/work [Mac OS X]
+Aug-15 20:39:56.419 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /Users/lilei/Downloads/Tumor_Informed_cfDNA_MRD_Pipeline/test_data/bin
+Aug-15 20:39:56.425 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Aug-15 20:39:56.429 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Aug-15 20:39:56.435 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+Aug-15 20:39:56.444 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Aug-15 20:39:56.449 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 17; maxThreads: 1000
+Aug-15 20:39:56.475 [main] DEBUG nextflow.Session - Session start
+Aug-15 20:39:56.476 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /Users/lilei/Downloads/Tumor_Informed_cfDNA_MRD_Pipeline/test_data/results/trace.txt
+Aug-15 20:39:56.477 [main] DEBUG nextflow.Session - Trace file already exists: /Users/lilei/Downloads/Tumor_Informed_cfDNA_MRD_Pipeline/test_data/results/trace.txt -- enable the 'trace.overwrite' option in your config file to overwrite existing files
 nextflow.exception.AbortOperationException: Trace file already exists: /Users/lilei/Downloads/Tumor_Informed_cfDNA_MRD_Pipeline/test_data/results/trace.txt -- enable the 'trace.overwrite' option in your config file to overwrite existing files
 	at nextflow.trace.TraceHelper.newFileWriter(TraceHelper.groovy:67)
 	at nextflow.trace.TraceFileObserver.onFlowCreate(TraceFileObserver.groovy:206)
@@ -58,23 +58,43 @@ Caused by: java.nio.file.FileAlreadyExistsException: /Users/lilei/Downloads/Tumo
 	at java.base/java.nio.file.Files.newBufferedWriter(Files.java:3001)
 	at nextflow.trace.TraceHelper.newFileWriter(TraceHelper.groovy:64)
 	... 9 common frames omitted
-Aug-15 16:38:56.310 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
-Aug-15 16:38:56.347 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
-  Script_b3c08c729587c89c: /Users/lilei/Downloads/Tumor_Informed_cfDNA_MRD_Pipeline/test_data/test_workflow.nf
-Aug-15 16:38:56.347 [main] DEBUG nextflow.Session - Session aborted -- Cause: Access to 'MOCK_SOMATIC_VARIANT_CALLING.out' is undefined since the process 'MOCK_SOMATIC_VARIANT_CALLING' has not been invoked before accessing the output attribute
-Aug-15 16:38:56.353 [main] DEBUG nextflow.Session - The following nodes are still active:
-  [operator] map
-  [operator] groupTuple
-  [operator] map
+Aug-15 20:39:56.478 [main] DEBUG nextflow.Session - Report file already exists: /Users/lilei/Downloads/Tumor_Informed_cfDNA_MRD_Pipeline/test_data/results/pipeline_report.html -- enable the 'report.overwrite' option in your config file to overwrite existing files
+nextflow.exception.AbortOperationException: Report file already exists: /Users/lilei/Downloads/Tumor_Informed_cfDNA_MRD_Pipeline/test_data/results/pipeline_report.html -- enable the 'report.overwrite' option in your config file to overwrite existing files
+	at nextflow.trace.ReportObserver.onFlowCreate(ReportObserver.groovy:133)
+	at nextflow.Session$_notifyFlowCreate_lambda40.doCall(Session.groovy:1093)
+	at nextflow.Session.notifyEvent(Session.groovy:1138)
+	at nextflow.Session.notifyFlowCreate(Session.groovy:1093)
+	at nextflow.Session.start(Session.groovy:585)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:133)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:379)
+	at nextflow.cli.Launcher.run(Launcher.groovy:513)
+	at nextflow.cli.Launcher.main(Launcher.groovy:673)
+Aug-15 20:39:56.478 [main] DEBUG nextflow.Session - Timeline file already exists: /Users/lilei/Downloads/Tumor_Informed_cfDNA_MRD_Pipeline/test_data/results/timeline_report.html -- enable the 'timeline.overwrite' option in your config file to overwrite existing files
+nextflow.exception.AbortOperationException: Timeline file already exists: /Users/lilei/Downloads/Tumor_Informed_cfDNA_MRD_Pipeline/test_data/results/timeline_report.html -- enable the 'timeline.overwrite' option in your config file to overwrite existing files
+	at nextflow.trace.TimelineObserver.onFlowCreate(TimelineObserver.groovy:76)
+	at nextflow.Session$_notifyFlowCreate_lambda40.doCall(Session.groovy:1093)
+	at nextflow.Session.notifyEvent(Session.groovy:1138)
+	at nextflow.Session.notifyFlowCreate(Session.groovy:1093)
+	at nextflow.Session.start(Session.groovy:585)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:133)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:379)
+	at nextflow.cli.Launcher.run(Launcher.groovy:513)
+	at nextflow.cli.Launcher.main(Launcher.groovy:673)
+Aug-15 20:39:56.590 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Aug-15 20:39:56.812 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_ecc5a6312288b16e: /Users/lilei/Downloads/Tumor_Informed_cfDNA_MRD_Pipeline/modules/plasma_processing.nf
+  Script_eeee9beacb640d53: /Users/lilei/Downloads/Tumor_Informed_cfDNA_MRD_Pipeline/test_data/test_step2.nf
+Aug-15 20:39:56.813 [main] DEBUG nextflow.Session - Session aborted -- Cause: Access to 'VALIDATE_STEP2_INPUTS.out' is undefined since the process 'VALIDATE_STEP2_INPUTS' has not been invoked before accessing the output attribute
+Aug-15 20:39:56.819 [main] DEBUG nextflow.Session - The following nodes are still active:
   [operator] map
   [operator] groupTuple
   [operator] map
 
-Aug-15 16:38:56.355 [main] ERROR nextflow.cli.Launcher - Access to 'MOCK_SOMATIC_VARIANT_CALLING.out' is undefined since the process 'MOCK_SOMATIC_VARIANT_CALLING' has not been invoked before accessing the output attribute
-nextflow.exception.ScriptRuntimeException: Access to 'MOCK_SOMATIC_VARIANT_CALLING.out' is undefined since the process 'MOCK_SOMATIC_VARIANT_CALLING' has not been invoked before accessing the output attribute
+Aug-15 20:39:56.822 [main] ERROR nextflow.cli.Launcher - Access to 'VALIDATE_STEP2_INPUTS.out' is undefined since the process 'VALIDATE_STEP2_INPUTS' has not been invoked before accessing the output attribute
+nextflow.exception.ScriptRuntimeException: Access to 'VALIDATE_STEP2_INPUTS.out' is undefined since the process 'VALIDATE_STEP2_INPUTS' has not been invoked before accessing the output attribute
 	at nextflow.script.ProcessDef.getOut(ProcessDef.groovy:153)
 	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
-	at Script_b3c08c729587c89c.runScript(Script_b3c08c729587c89c:135)
+	at Script_eeee9beacb640d53.runScript(Script_eeee9beacb640d53:89)
 	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
 	at nextflow.script.BaseScript.run0(BaseScript.groovy:159)
 	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)

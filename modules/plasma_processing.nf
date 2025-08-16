@@ -228,26 +228,52 @@ process FRAGMENTOMICS_FEATURES {
     
     # Length distribution (paired-end)
     samtools view -f 3 ${consensus_bam} \\
-        | awk '{L=sqrt(($9)^2); if(L>0 && L<1000) print L}' \\
         | python3 - << 'PY'
 import sys, numpy as np
-L=[int(x.strip()) for x in sys.stdin]
+L=[int(x.strip().split()[8]) for x in sys.stdin if len(x.strip().split()) > 8]
 short=sum(1 for x in L if x<150); long=sum(1 for x in L if 150<=x<=220)
-print("short/long_ratio\\t{:.3f}".format(short/max(1,long)))
+print("short/long_ratio\t{:.3f}".format(short/max(1,long)))
 PY
         > features/${sample}_${timepoint}.fragmentomics.tsv
     
     # End-motifs (5' 4-mers)
     bedtools bamtobed -i ${consensus_bam} \\
-        | awk '{if($6=="+") print $1"\\t"$2"\\t"$2+1"\\t+\\n"; else print $1"\\t"$3-1"\\t"$3"\\t-"}' \\
+        | python3 - << 'PY'
+import sys
+for line in sys.stdin:
+    fields = line.strip().split()
+    if len(fields) >= 6:
+        if fields[5] == "+":
+            print(f"{fields[0]}\t{fields[1]}\t{int(fields[1])+1}\t+")
+        else:
+            print(f"{fields[0]}\t{int(fields[2])-1}\t{fields[2]}\t-")
+PY
         | bedtools getfasta -fi ${ref_genome} -bed - -s \\
         | paste - - | cut -f2 \\
-        | awk '{print toupper(substr($0,1,4))}' | sort | uniq -c | sort -nr \\
+        | python3 - << 'PY'
+import sys
+for line in sys.stdin:
+    seq = line.strip()
+    if len(seq) >= 4:
+        print(seq[:4].upper())
+PY
+        | sort | uniq -c | sort -nr \\
         > features/${sample}_${timepoint}.endmotifs.txt
     
     # TSS enrichment
     bedtools coverage -a ${tss_bed} -b ${consensus_bam} \\
-        | awk '{cov[$4]+=$7} END{for(k in cov) print k"\\t"cov[k]}' \\
+        | python3 - << 'PY'
+import sys
+cov = {}
+for line in sys.stdin:
+    fields = line.strip().split()
+    if len(fields) >= 7:
+        key = fields[3]
+        value = float(fields[6])
+        cov[key] = cov.get(key, 0) + value
+for k, v in cov.items():
+    print(f"{k}\t{v}")
+PY
         > features/${sample}_${timepoint}.tss_cov.tsv
     
     echo "Fragmentomics features extracted for ${sample}_${timepoint}"
