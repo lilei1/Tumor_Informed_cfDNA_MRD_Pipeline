@@ -11,18 +11,21 @@ test_data/
 │   └── normal/            # Normal WBC WES FASTQ files
 ├── plasma/                 # Plasma cfDNA test data (Step 2)
 │   ├── patients/          # Patient plasma samples (multiple timepoints)
-│   └── healthy/           # Healthy donor plasma samples
+│   └── healthy/           # Healthy donor plasma samples (Step 2.5)
 ├── refs/                   # Reference genome
 ├── resources/              # Resource files
 │   ├── exome.interval_list # Exome capture intervals
 │   ├── gnomad.af-only.vcf.gz # gnomAD germline resource
 │   ├── tss.bed            # TSS regions for fragmentomics
 │   ├── gc_hg38.wig        # GC content for ichorCNA
-│   └── map_hg38.wig       # Mappability for ichorCNA
+│   ├── map_hg38.wig       # Mappability for ichorCNA
+│   └── mock_truthset.bed  # Mock truth set for error model testing
 ├── pon/                    # Panel of Normals
 ├── nextflow.config         # Test-specific configuration
 ├── test_pipeline.nf        # Test workflow for Step 1
 ├── test_step2.nf          # Test workflow for Step 2
+├── test_step2_5.nf        # Test workflow for Step 2.5
+├── simple_step2_test.nf   # Simple Step 2 validation
 ├── run_test.sh             # Test execution script
 └── README.md               # This file
 ```
@@ -42,8 +45,16 @@ test_data/
   - T0: Baseline timepoint
   - T1: Follow-up timepoint
   - UMI-tagged reads for consensus calling
-- **Healthy Plasma**: `plasma/healthy/` (for control analysis)
 - **Additional Resources**: TSS regions, GC content, mappability
+
+### Step 2.5: Background Error Model from Healthy Donors
+
+- **Healthy Plasma**: `plasma/healthy/healthy_donor_1_R{1,2}.fastq.gz`
+  - UMI-tagged reads from healthy donors
+  - Used to build context-specific error rates
+- **Mock Truth Set**: `resources/mock_truthset.bed`
+  - Mock regions for error model testing
+  - Simulates truth set from Step 1
 
 ## Running Tests
 
@@ -63,13 +74,25 @@ This will:
 
 ```bash
 cd test_data
-nextflow run test_step2.nf -profile docker
+nextflow run test_step2.nf
 ```
 
 This will:
 1. Validate plasma data inputs
 2. Test UMI extraction workflow
 3. Validate reference file availability
+
+### Test Step 2.5 (Background Error Model)
+
+```bash
+cd test_data
+nextflow run test_step2_5.nf
+```
+
+This will:
+1. Validate healthy plasma data inputs
+2. Test error model building workflow
+3. Validate mock truth set and reference files
 
 ## Expected Outputs
 
@@ -84,6 +107,13 @@ This will:
 - `results/plasma/variants/`: Variant calls at truth set loci
 - `results/plasma/features/`: Fragmentomics and other features
 - `results/plasma/cnv/`: CNV analysis results
+
+### Step 2.5 Outputs
+- `results/error_model/`: Background error model files
+  - `error_model_tricontext.json`: JSON format error rates
+  - `error_model_tricontext.tsv`: TSV format error rates
+  - `error_model_summary.txt`: Summary statistics
+  - `error_model_validation.txt`: Validation report
 
 ## Test Limitations
 

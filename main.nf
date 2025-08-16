@@ -6,6 +6,7 @@
 // Include modules
 include { WES_PREPROCESSING; SOMATIC_VARIANT_CALLING } from './modules/preprocessing'
 include { UMI_EXTRACTION; PLASMA_ALIGNMENT; UMI_CONSENSUS; PLASMA_QC; TRUTHSET_VARIANT_CALLING; FRAGMENTOMICS_FEATURES; METHYLATION_FEATURES; CNV_ANALYSIS } from './modules/plasma_processing'
+include { BUILD_ERROR_MODEL; VALIDATE_ERROR_MODEL } from './modules/error_model'
 include { FEATURE_EXTRACTION } from './modules/feature_extraction'
 include { MRD_CLASSIFICATION } from './modules/mrd_classification'
 include { VALIDATION } from './modules/validation'
@@ -28,7 +29,7 @@ tumor_ch = Channel
 normal_ch = Channel
     .fromPath(params.normalDir + "/*_R{1,2}.fastq.gz")
     .map { file -> 
-        def sample = file.name.replaceAll(/.*?(\w+)_T0_R[12]\.fastq\.gz/, '$1')
+        def sample = file.name.replaceAll(/.*?(\w+)_T0_R{1,2}\.fastq\.gz/, '$1')
         [sample, file]
     }
     .groupTuple()
@@ -150,6 +151,30 @@ workflow {
         map_wig
     )
     
+    // Step 2.5: Background Error Model from Healthy Donors
+    // Process healthy plasma samples for error model
+    UMI_EXTRACTION(healthy_plasma_ch.map { sample, r1, r2 -> [sample, 'healthy', r1, r2] })
+    
+    PLASMA_ALIGNMENT(
+        UMI_EXTRACTION.out.umi_fastq.filter { sample, type, r1, r2 -> type == 'healthy' },
+        ref_genome
+    )
+    
+    UMI_CONSENSUS(PLASMA_ALIGNMENT.out.raw_bam)
+    
+    // Build background error model
+    BUILD_ERROR_MODEL(
+        UMI_CONSENSUS.out.consensus_bam.filter { sample, type, bam, bai -> type == 'healthy' },
+        SOMATIC_VARIANT_CALLING.out.truth_set_bed,
+        ref_genome
+    )
+    
+    // Validate error model
+    VALIDATE_ERROR_MODEL(
+        BUILD_ERROR_MODEL.out.error_model_json,
+        BUILD_ERROR_MODEL.out.error_model_tsv
+    )
+    
     // Step 3: Feature Extraction (to be implemented)
     // FEATURE_EXTRACTION(...)
     
@@ -179,3 +204,9 @@ workflow.out.plasma_endmotifs = FRAGMENTOMICS_FEATURES.out.endmotifs
 workflow.out.plasma_tss_coverage = FRAGMENTOMICS_FEATURES.out.tss_coverage
 workflow.out.plasma_cnv = CNV_ANALYSIS.out.tumor_fraction
 workflow.out.plasma_qc = PLASMA_QC.out.insert_metrics
+
+// Output channels for Step 2.5
+workflow.out.error_model = BUILD_ERROR_MODEL.out.error_model_json
+workflow.out.error_model_tsv = BUILD_ERROR_MODEL.out.error_model_tsv
+workflow.out.error_model_summary = BUILD_ERROR_MODEL.out.summary
+workflow.out.error_model_validation = VALIDATE_ERROR_MODEL.out.validation
